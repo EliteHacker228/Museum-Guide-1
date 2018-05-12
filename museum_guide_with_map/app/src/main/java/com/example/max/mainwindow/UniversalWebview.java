@@ -18,6 +18,7 @@ public class UniversalWebview extends AppCompatActivity {
         Intent intent = getIntent();
         String url = intent.getStringExtra("URL");
         String passkey = intent.getStringExtra("Passkey");
+        webView.getSettings().setBuiltInZoomControls(true);
         switch (passkey){
             case "News":
                 setTitle("Новости на Znak.com");

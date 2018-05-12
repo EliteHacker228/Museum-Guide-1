@@ -4,32 +4,43 @@ import android.graphics.Bitmap;
 
 public class Museum {
     //Класс музея
-    String mname;
-    String adress;
-    String phone;
-    String URL;
-    String website;
-    String trivia;
-    Bitmap poster;
+    private String mname;
+    private String adress;
+    private String phone;
+    private String URL;
+    private String website;
+    private String trivia;
+    private double v;
+    private double v1;
 
 
-    public Museum(String mname, String adress, String phone, String URL, String website, String trivia) {
+
+    public Museum(String mname, String adress, String phone, String URL, String website, String trivia, double v, double v1) {
         this.mname = mname;
         this.adress = adress;
         this.phone = phone;
         this.URL = URL;
         this.website = website;
         this.trivia=trivia;
+        this.v=v;
+        this.v1=v1;
     }
 
 
-
-    public Bitmap getPoster() {
-        return poster;
+    public double getV() {
+        return v;
     }
 
-    public void setPoster(Bitmap poster) {
-        this.poster = poster;
+    public void setV(double v) {
+        this.v = v;
+    }
+
+    public double getV1() {
+        return v1;
+    }
+
+    public void setV1(double v1) {
+        this.v1 = v1;
     }
 
     public String getPhone() {
