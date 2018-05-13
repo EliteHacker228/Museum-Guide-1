@@ -88,6 +88,10 @@ public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.MuseumsVie
             intent.putExtra("website", museum.getWebsite()); //website
             intent.putExtra("phone", museum.getPhone()); //phone
             intent.putExtra("adress", museum.getAdress());
+            intent.putExtra("v", museum.getV());
+            intent.putExtra("v1", museum.getV1());
+
+
 
 
             ((Activity)context).startActivity(intent);

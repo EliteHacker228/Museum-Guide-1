@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.max.mainwindow.R;
 import com.example.max.mainwindow.UniversalWebview;
+import com.google.android.gms.maps.MapView;
 import com.squareup.picasso.Picasso;
 
 public class MuseumActivity extends AppCompatActivity {
@@ -21,7 +22,6 @@ public class MuseumActivity extends AppCompatActivity {
     LinearLayout museumInformContainer;
     ImageView poster;
     String WebAdress;
-
 
 
     @Override

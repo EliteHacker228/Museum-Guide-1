@@ -41,6 +41,7 @@ public class NewsParserFragment extends Fragment {
    private ArrayList<NewsElement> newsList = new ArrayList<>();
    private ArrayList<NewsElement> savedNewsList = new ArrayList<>();
    private ArrayList<NewsElement> sourceList = new ArrayList<>();
+   boolean sl=false;
 
 
     public NewsParserFragment() {
@@ -156,15 +157,23 @@ public class NewsParserFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_news_parser, container, false);
-        fullSourceList();
-        NewThread newThread = new NewThread();
-        newThread.execute();
-        RecyclerView recyclerView = view.findViewById(R.id.rv_list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new MyRecyclerViewAdapter(view.getContext(), newsList);
-        recyclerView.setAdapter(adapter);
+
+        if(savedInstanceState==null) {
+
+            if(!sl) {
+                fullSourceList();
+                sl=true;
+            }
+            NewThread newThread = new NewThread();
+            newThread.execute();
+            RecyclerView recyclerView = view.findViewById(R.id.rv_list);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            adapter = new MyRecyclerViewAdapter(view.getContext(), newsList);
+            recyclerView.setAdapter(adapter);
+        }
         return view;
+
     }
 
     public class NewThread extends AsyncTask<String, Void, String> {
